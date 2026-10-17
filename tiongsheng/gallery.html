@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery | Tiong Sheng Services</title>
+<meta name="description" content="Tiong Sheng Services: international freight forwarding by air, sea and land, warehousing and container handling, and lorry crane, mobile crane and trailer rental in Singapore.">
+<link rel="icon" href="assets/img/tss-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#26338F}a:hover{color:#C8161D}
+.ph{background-color:#DDE4EB;background-image:repeating-linear-gradient(135deg,rgba(38,51,143,0.05) 0 2px,transparent 2px 14px)}
+.navlink{color:#26338F;text-decoration:none;font-weight:600;font-size:15px;padding:12px 4px}
+.navlink:hover{color:#C8161D}
+.navlink.on{color:#C8161D;box-shadow:inset 0 -2px 0 #D7191F}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:#D7191F;color:#FFFFFF;text-decoration:none;font-weight:700;font-size:15px;padding:15px 26px;border-radius:8px;min-height:48px;box-sizing:border-box}
+.btn-primary:hover{background:#B3141A;color:#FFFFFF}
+.flink{color:#C9D4DF;text-decoration:none}
+.flink:hover{color:#FF9EA2}
+.tile{display:flex;flex-direction:column;gap:12px;background:none;border:none;padding:0;font:inherit;text-align:left;cursor:pointer;color:inherit}
+.tile:hover .tile-img{box-shadow:0 10px 28px rgba(38,51,143,0.16)}
+
+/* Image animations: Elementor equivalents noted in the hand-off */
+.img-frame{overflow:hidden;position:relative;background:#DDE4EB}
+.img-frame img{width:100%;height:100%;object-fit:cover;object-position:center 35%;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.img-frame:hover img{transform:scale(1.06)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:none}}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.12)}}
+@keyframes heroFade{0%{opacity:0}6%{opacity:1}33%{opacity:1}40%{opacity:0}100%{opacity:0}}
+.enter{animation:fadeUp .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;opacity:0;animation:heroFade 18s linear infinite,kenburns 18s linear infinite}
+.reveal{animation:fadeUp .9s cubic-bezier(.2,.7,.2,1) .25s both}
+.d1{animation-delay:.12s}.d2{animation-delay:.24s}
+@media (prefers-reduced-motion: reduce){.reveal,.enter,.hero-slide{animation:none!important}.hero-slide:first-child{opacity:1}.img-frame img{transition:none}}
+</style>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<div id="app"></div>
+<noscript><p style="padding:24px;font-family:sans-serif">This preview needs JavaScript turned on.</p></noscript>
+<template id="page-template">
+
+
+<div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #44546A; background: #FFFFFF; width: 100%; font-size: 16px; line-height: 1.6">
+
+<header style="background: #FFFFFF; border-bottom: 1px solid #E4E9EE">
+<div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; justify-content: space-between">
+<a href="index.html" aria-label="Tiong Sheng Services home" style="display: flex; align-items: center; text-decoration: none"><img src="assets/img/tss-logo.png" alt="Tiong Sheng Services" style="height: 56px; width: auto; display: block"></a>
+<nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px 28px; align-items: center">
+<a class="navlink" href="index.html">Home</a>
+<a class="navlink" href="about.html">About</a>
+<a class="navlink" href="services.html">Services</a>
+<a class="navlink on" href="gallery.html" aria-current="page">Gallery</a>
+<a class="navlink" href="contact.html">Contact</a>
+</nav>
+<a class="btn-primary" href="get-a-quote.html">Get a Quote</a>
+</div>
+</header>
+
+<section style="background: #26338F">
+<div style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 80px; display: flex; flex-direction: column; gap: 16px">
+<nav aria-label="Breadcrumb" style="font-size: 14px; color: #9FB0C1"><a href="index.html" style="color: #C9D4DF; text-decoration: none">Home</a> / <span style="color: #FF9EA2">Gallery</span></nav>
+<h1 class="enter" style="margin: 0; font-family: Manrope, sans-serif; font-weight: 800; font-size: 52px; line-height: 1.1; letter-spacing: -1.1px; color: #FFFFFF">Our work in the field</h1>
+<p class="enter d1" style="margin: 0; font-size: 19px; color: #C9D4DF; max-width: 640px">Freight, warehousing, container handling and lifting operations — filter by service to find the work that matches your job.</p>
+</div>
+</section>
+
+<section style="background: #FFFFFF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 96px; display: flex; flex-direction: column; gap: 36px">
+
+<div role="tablist" aria-label="Gallery categories" style="display: flex; flex-wrap: wrap; gap: 8px; background: #F1F4F7; padding: 6px; border-radius: 12px">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="6">
+<button role="tab" aria-selected="{{t.selected}}" onClick="{{t.pick}}" style="{{t.btnStyle}}">
+<span>{{t.label}}</span>
+<span style="{{t.countStyle}}">{{t.count}}</span>
+</button>
+</sc-for>
+</div>
+
+<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px">
+<h2 style="margin: 0; font-family: Manrope, sans-serif; font-weight: 800; font-size: 26px; color: #26338F">{{heading}}</h2>
+<span style="font-size: 14px">{{summary}}</span>
+</div>
+
+<sc-for list="{{panels}}" as="p" hint-placeholder-count="1">
+<sc-if value="{{p.on}}" hint-placeholder-val="{{ true }}">
+<div role="tabpanel" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 28px 24px">
+<sc-for list="{{p.items}}" as="it" hint-placeholder-count="6">
+<button class="tile enter" style="{{it.delay}}" onClick="{{it.open}}" aria-label="{{it.aria}}">
+<span class="img-frame tile-img" style="display: block; width: 100%; height: 240px; border-radius: 10px; transition: box-shadow .2s"><img src="{{it.img}}" alt="{{it.alt}}" loading="lazy"><span style="position: absolute; top: 14px; left: 14px; font-size: 12px; font-weight: 600; color: #26338F; background: #FFFFFF; padding: 4px 10px; border-radius: 999px">{{it.catLabel}}</span></span>
+<span style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: Manrope, sans-serif; font-weight: 700; font-size: 17px; color: #26338F">{{it.title}}</span>
+<span style="font-size: 14px">{{it.note}}</span>
+</span>
+</button>
+</sc-for>
+</div>
+</sc-if>
+</sc-for>
+</div>
+</section>
+
+<section style="background: #F6F8FA">
+<div style="max-width: 1200px; margin: 0 auto; padding: 72px 24px; display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 620px">
+<h2 style="margin: 0; font-family: Manrope, sans-serif; font-weight: 800; font-size: 32px; letter-spacing: -0.6px; color: #26338F">Planning something similar?</h2>
+<p style="margin: 0">Send us the details and we'll scope it with you.</p>
+</div>
+<a class="btn-primary" href="get-a-quote.html">Get a Quote</a>
+</div>
+</section>
+
+<footer style="background: #141B54; color: #C9D4DF; font-size: 15px">
+<div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr)); gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 12px"><span style="align-self: flex-start; background: #FFFFFF; border-radius: 8px; padding: 10px 14px; display: inline-flex"><img src="assets/img/tss-logo.png" alt="Tiong Sheng Services" style="height: 40px; width: auto; display: block"></span><span>International freight forwarding, logistics and lifting services from Singapore.</span></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: Manrope, sans-serif; font-weight: 700; color: #FFFFFF">Company</span><a class="flink" href="about.html">About</a><a class="flink" href="services.html">Services</a><a class="flink" href="gallery.html">Gallery</a><a class="flink" href="contact.html">Contact</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="font-family: Manrope, sans-serif; font-weight: 700; color: #FFFFFF">Contact</span><span>Blk 3018 Bedok North Street 5, #01-25, Singapore 486132</span><a class="flink" href="tel:+6587488313">+65 8748 8313</a><a class="flink" href="mailto:tss.transport@tiongshengservices.com">tss.transport@tiongshengservices.com</a></div>
+</div>
+<div style="max-width: 1200px; margin: 0 auto; padding: 20px 24px 28px; border-top: 1px solid #29317A; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; font-size: 13px; color: #9FB0C1"><span>© 2026 Tiong Sheng Services Pte Ltd · Co. Reg. 202402932G</span><span>Privacy Policy · PDPA</span></div>
+</footer>
+
+<!-- Lightbox -->
+<sc-if value="{{hasOpen}}" hint-placeholder-val="{{ false }}">
+<div role="dialog" aria-modal="true" aria-label="Photo viewer" style="position: fixed; inset: 0; background: rgba(11,31,51,0.88); display: flex; align-items: center; justify-content: center; padding: 24px; z-index: 50">
+<div style="width: 100%; max-width: 960px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 16px">
+<span style="display: flex; flex-direction: column; color: #FFFFFF"><span style="font-family: Manrope, sans-serif; font-weight: 700; font-size: 20px">{{current.title}}</span><span style="font-size: 14px; color: #C9D4DF">{{current.catLabel}} · {{current.note}}</span></span>
+<button onClick="{{close}}" aria-label="Close" style="width: 48px; height: 48px; border-radius: 999px; border: 1.5px solid #4F5BB0; background: none; color: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</button>
+</div>
+<div style="height: 540px; border-radius: 12px; overflow: hidden; background: #0E1440; display: flex; align-items: center; justify-content: center"><img class="enter" src="{{current.img}}" alt="{{current.alt}}" style="max-width: 100%; max-height: 100%; object-fit: contain; display: block"></div>
+<div style="display: flex; justify-content: space-between">
+<button onClick="{{prev}}" style="font: inherit; font-weight: 700; color: #FFFFFF; background: none; border: 1.5px solid #4F5BB0; border-radius: 8px; padding: 12px 20px; min-height: 48px; cursor: pointer">← Previous</button>
+<button onClick="{{next}}" style="font: inherit; font-weight: 700; color: #FFFFFF; background: none; border: 1.5px solid #4F5BB0; border-radius: 8px; padding: 12px 20px; min-height: 48px; cursor: pointer">Next →</button>
+</div>
+</div>
+</div>
+</sc-if>
+
+</div>
+</template>
+<script src="assets/js/morphdom-umd.min.js"></script>
+<script src="assets/js/dc-runtime.js"></script>
+<script>
+class Component extends DCLogic {
+  renderVals() {
+    const st = this.state || {};
+    const cat = st.cat || 'all';
+    const cats = [
+      ['all', 'All work'],
+      ['lift', 'Crane Lifting'],
+      ['freight', 'Freight & Delivery'],
+      ['project', 'Project Cargo'],
+      ['warehouse', 'Warehousing & Containers']
+    ];
+    const label = {}; cats.forEach((c) => { label[c[0]] = c[1]; });
+    const all = [
+      { cat: 'lift', title: 'High-rise balcony lift', note: 'Lorry crane', img: 'assets/img/lorry-crane-balcony-lift.jpg', alt: 'Lorry crane lifting materials to a high-rise balcony' },
+      { cat: 'freight', title: 'Solar modules ready to dispatch', note: 'Warehouse pickup', img: 'assets/img/truck-solar-modules-warehouse.jpg', alt: 'Truck loaded with palletised solar modules at a warehouse' },
+      { cat: 'warehouse', title: 'Warehouse storage', note: 'Palletised cargo', img: 'assets/img/warehouse-storage.jpg', alt: 'Palletised cargo stored in the warehouse' },
+      { cat: 'project', title: 'Oversized steel structure', note: 'Trailer haulage', img: 'assets/img/trailer-heavy-haulage.jpg', alt: 'Trailer hauling an oversized steel structure' },
+      { cat: 'lift', title: 'Rooftop lift', note: 'Mobile crane', img: 'assets/img/mobile-crane-rooftop-lift.jpg', alt: 'Mobile crane lifting a load to a rooftop' },
+      { cat: 'freight', title: 'Palletised modules loaded', note: 'Yard loading', img: 'assets/img/truck-solar-pallets-yard.jpg', alt: 'Crane truck with wrapped solar module pallets in a yard' },
+      { cat: 'warehouse', title: 'Container unstuffing', note: 'Container handling', img: 'assets/img/container-interior.jpg', alt: 'Inside a shipping container ready for unstuffing' },
+      { cat: 'project', title: 'Crated cargo', note: 'Crane truck', img: 'assets/img/crated-cargo-crane-truck.jpg', alt: 'Crated cargo on a crane truck' },
+      { cat: 'lift', title: 'Residential rooftop lift', note: 'Lorry crane', img: 'assets/img/lorry-crane-residential-roof.jpg', alt: 'Lorry crane lifting equipment onto a residential roof' },
+      { cat: 'freight', title: 'Solar module delivery', note: 'Crane truck', img: 'assets/img/ja-solar-truck.jpg', alt: 'Crane truck loaded with solar module pallets' },
+      { cat: 'warehouse', title: 'Container loading ramp', note: 'Container handling', img: 'assets/img/container-loading-ramp.jpg', alt: 'Loading ramp leading into a shipping container' },
+      { cat: 'project', title: 'Crated frames in transit', note: 'Crane truck', img: 'assets/img/crated-frames-flyover.jpg', alt: 'Crated cargo on a crane truck beneath a flyover' },
+      { cat: 'lift', title: 'Pallet unloading on site', note: 'Lorry crane', img: 'assets/img/lorry-crane-pallet-unloading.jpg', alt: 'Lorry crane unloading a pallet of solar modules at a building' },
+      { cat: 'freight', title: 'Industrial site delivery', note: 'Crane truck', img: 'assets/img/truck-solar-industrial.jpg', alt: 'Solar module pallets on a crane truck at an industrial site' },
+      { cat: 'project', title: 'Crated cargo delivery', note: 'Crane truck', img: 'assets/img/lorry-crane-crated-delivery.jpg', alt: 'Crane truck delivering crated cargo to a building' },
+      { cat: 'lift', title: 'Pallet lift from truck', note: 'Lorry crane', img: 'assets/img/crane-pallet-lift-sky.jpg', alt: 'Crane lifting a wrapped pallet from a truck' },
+      { cat: 'freight', title: 'Secured cargo', note: 'Truck loading', img: 'assets/img/truck-bed-loading.jpg', alt: 'Cargo secured on a truck bed in a container yard' },
+      { cat: 'lift', title: 'Rooftop delivery', note: 'Crane lift', img: 'assets/img/rooftop-crane-lift-cloudy.jpg', alt: 'Crane lifting a pallet to a rooftop' },
+      { cat: 'freight', title: 'Modules and mounting frames', note: 'Mixed load', img: 'assets/img/truck-modules-and-frames.jpg', alt: 'Truck carrying solar module pallets and crated mounting frames' }
+    ];
+    const visible = cat === 'all' ? all : all.filter((x) => x.cat === cat);
+    const openIdx = st.open === undefined ? -1 : st.open;
+    const items = visible.map((x, i) => ({
+      title: x.title, note: x.note, catLabel: label[x.cat], img: x.img, alt: x.alt,
+      aria: 'Open photo: ' + x.title,
+      open: () => this.setState({ open: i })
+    }));
+    const panels = cats.map((c) => {
+      const list = c[0] === 'all' ? all : all.filter((x) => x.cat === c[0]);
+      return {
+        on: c[0] === cat,
+        items: list.map((x, i) => ({
+          title: x.title, note: x.note, catLabel: label[x.cat], img: x.img, alt: x.alt,
+          aria: 'Open photo: ' + x.title,
+          delay: 'animation-delay: ' + (0.05 + i * 0.07).toFixed(2) + 's',
+          open: () => this.setState({ open: i })
+        }))
+      };
+    });
+    const base = 'flex: 1 1 auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px; font: inherit; font-weight: 600; font-size: 15px; cursor: pointer; border: none; border-radius: 8px; padding: 12px 18px; min-height: 48px; ';
+    const tabs = cats.map((c) => {
+      const on = c[0] === cat;
+      const n = c[0] === 'all' ? all.length : all.filter((x) => x.cat === c[0]).length;
+      return {
+        label: c[1], count: String(n),
+        selected: on ? 'true' : 'false',
+        pick: () => this.setState({ cat: c[0], open: -1 }),
+        btnStyle: base + (on ? 'background: #26338F; color: #FFFFFF; box-shadow: inset 0 -3px 0 #D7191F;' : 'background: transparent; color: #26338F;'),
+        countStyle: 'font-size: 12px; font-weight: 700; padding: 2px 8px; border-radius: 999px; ' + (on ? 'background: #D7191F; color: #FFFFFF;' : 'background: #DDE4EB; color: #26338F;')
+      };
+    });
+    const n = visible.length;
+    return {
+      tabs: tabs, items: items, panels: panels,
+      heading: label[cat],
+      summary: n + (n === 1 ? ' photo' : ' photos'),
+      hasOpen: openIdx >= 0 && openIdx < n,
+      current: openIdx >= 0 && openIdx < n ? items[openIdx] : { title: '', catLabel: '', note: '', img: '', alt: '' },
+      close: () => this.setState({ open: -1 }),
+      prev: () => this.setState({ open: (openIdx - 1 + n) % n }),
+      next: () => this.setState({ open: (openIdx + 1) % n })
+    };
+  }
+}
+DC.mount(Component, {});
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+/* Shared fixes for the static preview (page styles live in each page's <head>) */
+html, body { overflow-x: clip; }
+img { max-width: 100%; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid #FF9EA2; outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+  h1 { font-size: 36px !important; letter-spacing: -0.6px !important; }
+  h2 { font-size: 28px !important; }
+  h3 { font-size: 22px !important; }
+  header nav { width: 100%; order: 3; gap: 0 18px !important; }
+  header img { height: 44px !important; }
+  /* hero stat badge on the home page sits inside the photo on phones */
+  #app [style*="left: -24px"] { left: 12px !important; bottom: 12px !important; }
+  /* big CTA bands and cards get tighter padding */
+  [style*="padding: 56px 48px"], [style*="padding: 52px 48px"] { padding: 36px 24px !important; }
+  [style*="padding: 40px; box-sizing"] { padding: 24px !important; }
+  [style*="height: 480px"], [style*="height: 460px"], [style*="height: 440px"], [style*="height: 420px"] { height: 300px !important; }
+  [style*="height: 540px"] { height: 60vh !important; }
+}
